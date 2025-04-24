@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 9.0.0.final using JasperReports Library version 6.21.0-4f56c4f36cd19e17675219a9ac4692d5f0f13b06  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="AdminAllRooms" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="df013db5-f76e-44d3-b0df-bcbc46d93160">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter.jrdax"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true"/>
+	<style name="SubTitle" forecolor="#0047A6" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#B6C8E3"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT roomid,
+	type,
+	rate,
+	availability
+FROM room
+ORDER BY room.availability DESC,
+	room.rate ASC]]>
+	</queryString>
+	<field name="roomid" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="roomid"/>
+		<property name="com.jaspersoft.studio.field.label" value="roomid"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="room"/>
+	</field>
+	<field name="type" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="type"/>
+		<property name="com.jaspersoft.studio.field.label" value="type"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="room"/>
+	</field>
+	<field name="rate" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="rate"/>
+		<property name="com.jaspersoft.studio.field.label" value="rate"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="room"/>
+	</field>
+	<field name="availability" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.name" value="availability"/>
+		<property name="com.jaspersoft.studio.field.label" value="availability"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="room"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="160" splitType="Stretch">
+			<image>
+				<reportElement x="319" y="0" width="164" height="126" uuid="de3dc507-ff03-4079-beb0-5753cbecd40f"/>
+				<imageExpression><![CDATA["https://lh6.googleusercontent.com/proxy/CK85ILv-GyoD3amkG7IPv3kW8QA5Y8ISBW9J2AmpZGCyHxRjV3Wk5bvqrWHJiNHOd-osFWzMM5V_scgB5jbwxJh_rVwAFXCo1PWgMw"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="279" y="110" width="244" height="30" forecolor="#0047A6" uuid="d6d035d6-7bc9-49e8-b3e2-166c8fa9f6a6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="24" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Rooms Report]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="802" height="1" uuid="e9d2002a-c8ee-4649-a258-640dad29110c"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="200" height="15" forecolor="#0047A6" backcolor="#B6C8E3" uuid="6590f11b-4bf2-4caf-8839-56f59c752d60">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9ed8d408-0240-4a92-9451-bf0447b03fd7"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Room Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="200" y="0" width="200" height="15" forecolor="#0047A6" backcolor="#B6C8E3" uuid="3f52bec4-2014-4c18-b34c-8354e0dd1784">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="dde7594f-e7a8-4b75-958d-c13bc308959b"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Room Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="400" y="0" width="200" height="15" forecolor="#0047A6" backcolor="#B6C8E3" uuid="67f15b9e-b1cf-460d-9c1d-7ddf158be408">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3e27ce2d-a867-46c6-a0d8-7a3a46629797"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Rate]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="600" y="0" width="200" height="15" forecolor="#0047A6" backcolor="#B6C8E3" uuid="337d6022-0e27-460c-ba72-dcc8b589e09c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="192df90e-e63f-44e6-83ae-04db44cefeec"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Availability]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="802" height="15" uuid="fa7cec56-4ec1-48e6-a26e-7266a995d174"/>
+				<textField textAdjust="StretchHeight">
+					<reportElement style="Detail" x="0" y="0" width="200" height="15" uuid="b074854c-1af8-4fdd-acf7-6be7cc1b215e">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9ed8d408-0240-4a92-9451-bf0447b03fd7"/>
+					</reportElement>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{roomid}]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight">
+					<reportElement style="Detail" x="200" y="0" width="200" height="15" uuid="76e9da06-f4c3-45d8-b3c8-3baaf1ed3bb8">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="dde7594f-e7a8-4b75-958d-c13bc308959b"/>
+					</reportElement>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{type}]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight">
+					<reportElement style="Detail" x="400" y="0" width="200" height="15" uuid="9dc636a5-3ab3-434f-9b1d-a7087f0b9e38">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3e27ce2d-a867-46c6-a0d8-7a3a46629797"/>
+					</reportElement>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{rate}]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight">
+					<reportElement style="Detail" x="600" y="0" width="200" height="15" uuid="eeb33b17-f702-4df1-8601-ee956a2b481a">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="192df90e-e63f-44e6-83ae-04db44cefeec"/>
+					</reportElement>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[($F{availability} == true) ? "Available" : "Booked"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="6" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="802" height="1" uuid="fa5e88d5-a011-4e32-8f12-ce923f903111"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="1" width="843" height="24" forecolor="#0047A6" backcolor="#B6C8E3" uuid="5d8169bd-4a75-48c8-8a68-6d3ad5ba9402"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="783" y="1" width="40" height="20" forecolor="#0047A6" backcolor="#B6C8E3" uuid="e5e27efa-b599-499b-9ca3-848cb511cb7b"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="703" y="1" width="80" height="20" forecolor="#0047A6" backcolor="#B6C8E3" uuid="18cfe1ca-f7d6-48b0-9827-28578b42a5e0"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="22" y="1" width="197" height="20" forecolor="#0047A6" backcolor="#B6C8E3" uuid="fbce24bb-3cb1-44a3-8eec-8c067ddbe5b5"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

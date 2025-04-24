@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<jdbcDataAdapter class="net.sf.jasperreports.data.jdbc.JdbcDataAdapterImpl">
+  <name>Hotel Management Connection</name>
+  <classpath>/Users/hamza/postgresql-42.7.3.jar</classpath>
+  <driver>org.postgresql.Driver</driver>
+  <username>postgres</username>
+  <password>admin</password>
+  <url>jdbc:postgresql://localhost:5432/dbtest</url>
+  <database></database>
+  <savePassword>true</savePassword>
+  <serverAddress></serverAddress>
+</jdbcDataAdapter>

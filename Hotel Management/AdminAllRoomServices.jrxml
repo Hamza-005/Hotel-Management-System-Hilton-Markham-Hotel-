@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 9.0.0.final using JasperReports Library version 6.21.0-4f56c4f36cd19e17675219a9ac4692d5f0f13b06  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="AdminAllRoomServices" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="df013db5-f76e-44d3-b0df-bcbc46d93160">
+	<property name="com.jaspersoft.studio.data.sql.tables">
+		<![CDATA[c2VydmljZSBBUyAsMzE1LDg2LDM0MzM5NDUxLWI1NzUtNDcyOC04MDcyLTUxNzE0OWQxZjhlODty
+b29tc2VydmljZSBBUyAsMTUsMTUsZTJhMjk0ZjItOTJiZS00NWFkLTg5ZGQtMDE2OTM4MDZmYTIx
+Ow==]]>
+	</property>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter.jrdax"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true"/>
+	<style name="SubTitle" forecolor="#0047A6" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#B6C8E3"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT roomservice.roomserviceid,
+	roomservice.bookingid,
+	roomservice.serviceid,
+	roomservice.staffid,
+	roomservice.roomid,
+	roomservice.quantity,
+	roomservice.status,
+	service.description,
+	service.name
+FROM roomservice
+	INNER JOIN service ON 
+	 roomservice.serviceid = service.serviceid 
+ORDER BY roomservice.status DESC]]>
+	</queryString>
+	<field name="roomserviceid" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="roomserviceid"/>
+		<property name="com.jaspersoft.studio.field.label" value="roomserviceid"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="roomservice"/>
+	</field>
+	<field name="bookingid" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="bookingid"/>
+		<property name="com.jaspersoft.studio.field.label" value="bookingid"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="roomservice"/>
+	</field>
+	<field name="roomid" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="roomid"/>
+		<property name="com.jaspersoft.studio.field.label" value="roomid"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="roomservice"/>
+	</field>
+	<field name="serviceid" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="serviceid"/>
+		<property name="com.jaspersoft.studio.field.label" value="serviceid"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="roomservice"/>
+	</field>
+	<field name="name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="name"/>
+		<property name="com.jaspersoft.studio.field.label" value="name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="service"/>
+	</field>
+	<field name="description" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="description"/>
+		<property name="com.jaspersoft.studio.field.label" value="description"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="service"/>
+	</field>
+	<field name="quantity" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="quantity"/>
+		<property name="com.jaspersoft.studio.field.label" value="quantity"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="roomservice"/>
+	</field>
+	<field name="staffid" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="staffid"/>
+		<property name="com.jaspersoft.studio.field.label" value="staffid"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="roomservice"/>
+	</field>
+	<field name="status" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="status"/>
+		<property name="com.jaspersoft.studio.field.label" value="status"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="roomservice"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="160" splitType="Stretch">
+			<staticText>
+				<reportElement x="279" y="110" width="244" height="30" forecolor="#0047A6" uuid="33d5b0b2-e53b-42fb-a9ba-a39a4a65a2d1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="24" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Room Service Report]]></text>
+			</staticText>
+			<image>
+				<reportElement x="319" y="0" width="164" height="126" uuid="0987df22-26e1-4998-bfbd-08d6d38ddbb8"/>
+				<imageExpression><![CDATA["https://lh6.googleusercontent.com/proxy/CK85ILv-GyoD3amkG7IPv3kW8QA5Y8ISBW9J2AmpZGCyHxRjV3Wk5bvqrWHJiNHOd-osFWzMM5V_scgB5jbwxJh_rVwAFXCo1PWgMw"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="802" height="1" uuid="e9d2002a-c8ee-4649-a258-640dad29110c"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="100" height="15" forecolor="#0047A6" uuid="54fe770f-b258-462f-ab30-20d036fda7b7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="67de2ab2-b909-471e-a76d-c1a8371a9b17"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Room Service ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="100" y="0" width="78" height="15" forecolor="#0047A6" uuid="ede4d08a-320f-4df3-93df-ef70f71a29e0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3cef509d-9d9f-4717-9f8b-c703c2163184"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Booking ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="178" y="0" width="89" height="15" forecolor="#0047A6" uuid="f265b0d7-6165-4334-a434-c7f23a0a167f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5b80a64c-bcff-49ab-9e58-640bcc8da367"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Room Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="267" y="0" width="89" height="15" forecolor="#0047A6" uuid="b8948e2e-a3a9-4f0c-84bc-a79f8c8ef6e3">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="37a442d0-0544-4ec5-bd1c-b889a9f01531"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Service ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="356" y="0" width="89" height="15" forecolor="#0047A6" uuid="055ead11-4875-42d5-96dd-8c8eb564b029">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fe327ade-941e-4440-ba7d-7a0da4eca0ea"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Service Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="445" y="0" width="89" height="15" forecolor="#0047A6" uuid="28167147-0d8b-422e-ac41-055bdadbe118">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="081e30ac-ebf5-448d-8803-c27f41dba1c8"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Description]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="534" y="0" width="89" height="15" forecolor="#0047A6" uuid="a33b5a9f-d2ce-477a-93c7-79380be16d23">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="18469e2e-efbf-4841-b853-5e969e73ada7"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Quantity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="623" y="0" width="89" height="15" forecolor="#0047A6" uuid="cfaf895d-3027-4998-99fc-807bd1eb201f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="86840899-a727-47dd-929f-15500c229993"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Assigned Staff]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="712" y="0" width="89" height="15" forecolor="#0047A6" uuid="407f57ae-87d1-4ef7-b27b-c1f76d4b9f26">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b580a00f-e55c-434f-93df-3db37fc5b9c4"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Status]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="802" height="15" uuid="fa7cec56-4ec1-48e6-a26e-7266a995d174"/>
+				<textField textAdjust="StretchHeight">
+					<reportElement style="Detail" x="0" y="0" width="100" height="15" uuid="8de8cbe1-ca42-4a7c-b545-8ddcff469621">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="67de2ab2-b909-471e-a76d-c1a8371a9b17"/>
+					</reportElement>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{roomserviceid}]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight">
+					<reportElement style="Detail" x="100" y="0" width="78" height="15" uuid="6bbe9ebd-7220-4e09-8269-147b9bca08f8">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3cef509d-9d9f-4717-9f8b-c703c2163184"/>
+					</reportElement>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{bookingid}]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight">
+					<reportElement style="Detail" x="178" y="0" width="89" height="15" uuid="188de4bc-a570-413b-9b58-727303ba8bbd">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5b80a64c-bcff-49ab-9e58-640bcc8da367"/>
+					</reportElement>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{roomid}]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight">
+					<reportElement style="Detail" x="267" y="0" width="89" height="15" uuid="6dd4e49d-0215-4be6-ab10-870423f64769">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="37a442d0-0544-4ec5-bd1c-b889a9f01531"/>
+					</reportElement>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{serviceid}]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight">
+					<reportElement style="Detail" x="356" y="0" width="89" height="15" uuid="b5bcde27-d0e1-4b3e-8485-523e421e9533">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fe327ade-941e-4440-ba7d-7a0da4eca0ea"/>
+					</reportElement>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight">
+					<reportElement style="Detail" x="445" y="0" width="89" height="15" uuid="f0d0ae89-0480-48ca-97a6-b7d63f27e5a7">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="081e30ac-ebf5-448d-8803-c27f41dba1c8"/>
+					</reportElement>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight">
+					<reportElement style="Detail" x="534" y="0" width="89" height="15" uuid="9a2b926f-240e-4153-94a6-dc8ad7dcb1f8">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="18469e2e-efbf-4841-b853-5e969e73ada7"/>
+					</reportElement>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{quantity}]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight">
+					<reportElement style="Detail" x="623" y="0" width="89" height="15" uuid="d5fcc681-233c-456e-8cf4-57888c361c70">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="86840899-a727-47dd-929f-15500c229993"/>
+					</reportElement>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{staffid}]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight">
+					<reportElement style="Detail" x="712" y="0" width="89" height="15" uuid="8cda705a-e226-4cc8-8d58-367ecaa7a756">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b580a00f-e55c-434f-93df-3db37fc5b9c4"/>
+					</reportElement>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{status}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="6" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="802" height="1" uuid="fa5e88d5-a011-4e32-8f12-ce923f903111"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="1" width="843" height="24" forecolor="#0047A6" backcolor="#B6C8E3" uuid="5d8169bd-4a75-48c8-8a68-6d3ad5ba9402"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="783" y="1" width="40" height="20" forecolor="#0047A6" backcolor="#B6C8E3" uuid="e5e27efa-b599-499b-9ca3-848cb511cb7b"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="703" y="1" width="80" height="20" forecolor="#0047A6" backcolor="#B6C8E3" uuid="18cfe1ca-f7d6-48b0-9827-28578b42a5e0"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="22" y="1" width="197" height="20" forecolor="#0047A6" backcolor="#B6C8E3" uuid="fbce24bb-3cb1-44a3-8eec-8c067ddbe5b5"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
